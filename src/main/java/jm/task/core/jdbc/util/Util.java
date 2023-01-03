@@ -22,4 +22,15 @@ public class Util {
         }
         return connection;
     }
+
+
+    public static void closeConnection() {
+        try {
+            getConnection().close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //закрыть соединение
 }
